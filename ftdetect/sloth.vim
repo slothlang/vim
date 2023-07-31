@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.slot set filetype=sloth
+au BufRead,BufNewFile *.sloth set filetype=sloth

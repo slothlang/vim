@@ -22,7 +22,7 @@ syntax match slothInterpolatedString "\v\w+(\(\))?" contained containedin=swiftI
 syntax keyword slothType Int String Float Void Bool
 syntax match slothOperator '[+ \- \* \/ <= == >= &&]'
 syntax match slothparen "("
-syntax match slothFunction "\w\+\s*(" contains=paren
+syntax match slothFunction "\w\+\s*(" contains=slothparen
 syntax match slothComment "#.*"
 syntax match slothBool "true"
 syntax match slothBool "false"
@@ -38,3 +38,12 @@ highlight default link slothOperator Operator
 highlight default link slothKeywords Keyword
 highlight default link slothType Type
 highlight default link slothFunction Function
+highlight default link slothParen Normal
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
