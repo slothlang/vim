@@ -2,4 +2,11 @@
 Vim plugin for sloth
 
 # Install
-`cp -r vim-sloth/* ~/.config/nvim/`
+
+## Lazyvim
+```
+# sloth.lua
+return {
+  { "slothlang/vim" },
+}
+```
